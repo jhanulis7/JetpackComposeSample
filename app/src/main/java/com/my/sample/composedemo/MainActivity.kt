@@ -5,10 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Slider
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
+import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -26,8 +23,7 @@ class MainActivity : ComponentActivity() {
             ComposeDemoTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
+                    modifier = Modifier.fillMaxSize(), color = MaterialTheme.colors.background
                 ) {
                     DemoScreen()
                 }
@@ -51,29 +47,34 @@ fun DemoScreen() {
         modifier = Modifier.fillMaxSize()
     ) {
         DemoText(
-            message = "Welcome to Compose",
-            fontSize = 20f
+            message = "Welcome to Compose", fontSize = 20f
         )
 
-        Spacer(modifier = Modifier
-            .height(150.dp)
-            .background(Color.Red))
+        Spacer(
+            modifier = Modifier
+                .height(150.dp)
+                .background(Color.Red)
+        )
 
         DemoSlider(
-            position = sliderPosition,
-            onPositionChange = handlePositionChange
+            position = sliderPosition, onPositionChange = handlePositionChange
         )
 
         DemoFontSizeText(position = sliderPosition)
+
+        Divider(
+            modifier = Modifier.padding(20.dp),
+            color = Color.DarkGray
+        )
+
+        DemoSwitch()
     }
 }
 
 @Composable
 fun DemoText(message: String, fontSize: Float) {
     Text(
-        text = message,
-        fontSize = fontSize.sp,
-        fontWeight = FontWeight.Bold
+        text = message, fontSize = fontSize.sp, fontWeight = FontWeight.Bold
     )
 }
 
@@ -90,10 +91,30 @@ fun DemoSlider(position: Float, onPositionChange: (Float) -> Unit) {
 @Composable
 fun DemoFontSizeText(position: Float) {
     Text(
-        style = MaterialTheme.typography.h2,
-        text = "${position.toInt()}sp",
-        fontSize = position.sp
+        style = MaterialTheme.typography.h2, text = "${position.toInt()}sp", fontSize = position.sp
     )
+}
+
+@Composable
+fun DemoSwitch(defaultChecked: Boolean = false) {
+    val checked = remember {
+        mutableStateOf(defaultChecked)
+    }
+    val onCheckedChanged = { check: Boolean ->
+        println("checked$checked")
+        checked.value = check
+    }
+
+    Column(
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally,
+    ) {
+        Switch(
+            checked = checked.value,
+            onCheckedChange = onCheckedChanged
+        )
+        Text(text = if(checked.value) "On" else "Off")
+    }
 }
 
 @Preview(showBackground = true)
