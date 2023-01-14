@@ -57,7 +57,8 @@ fun DemoScreen() {
         )
 
         DemoSlider(
-            position = sliderPosition, onPositionChange = handlePositionChange
+            position = sliderPosition,
+            onPositionChange = handlePositionChange
         )
 
         DemoFontSizeText(position = sliderPosition)
