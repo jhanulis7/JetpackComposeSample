@@ -55,7 +55,9 @@ fun DemoScreen() {
             fontSize = 20f
         )
 
-        Spacer(modifier = Modifier.height(150.dp).background(Color.Red))
+        Spacer(modifier = Modifier
+            .height(150.dp)
+            .background(Color.Red))
 
         DemoSlider(
             position = sliderPosition,
