@@ -19,5 +19,5 @@
 - compositionLocalOf
 - staticCompositionLocalOf
 - rememberSavalble
-- <img src = "https://github.com/jhanulis7/JetpackComposeSample/blob/main/Hoisting.png" width="30%" height="30%">
+- <img src = "https://github.com/jhanulis7/JetpackComposeSample/blob/main/CompLocal.png" width="30%" height="30%">
 
