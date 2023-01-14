@@ -74,7 +74,9 @@ fun DemoScreen() {
 @Composable
 fun DemoText(message: String, fontSize: Float) {
     Text(
-        text = message, fontSize = fontSize.sp, fontWeight = FontWeight.Bold
+        text = message,
+        fontSize = fontSize.sp,
+        fontWeight = FontWeight.Bold
     )
 }
 
