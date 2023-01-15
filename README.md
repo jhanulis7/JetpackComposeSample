@@ -54,3 +54,9 @@
 - alignByBaseline / alignBy / clip / RoundCorner / CircleShape / CutCornerShape
 - <p align="center"><img src = "https://github.com/jhanulis7/JetpackComposeSample/blob/main/Layout.png" width="30%" height="30%"></p>
 
+## CustomLayoutDemo
+- Box, Row, Column 컴포넌트는 모든 자식의 높이와 폭을 측정하고 위치를 계산해 그에 맞게 행열 스택위치를 생성하는 로직을 포함하고 있다. 동일한 기법을 통하여 다양한 고급 레이아웃을 만들수 있다
+- fun Modifier.<커스텀 레이아웃이름>(선택적 param) { measurable, constaints -> }
+  - measurable : 자식이 배치될 정보
+  - constraints : 자식이 사용할 수 있는 최대/최소 widhth/height 
+
