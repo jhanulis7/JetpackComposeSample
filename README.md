@@ -4,21 +4,34 @@
 - Compose 는 Foundation or Layout or Material Design 로 구분할 수 있고 이 사용 방법에 대해서 샘플코드 작성해본다.
 
 ## ComposeDemo
-- Stateful Slide Composable
-- Stateful Switch Composable
+- Stateful Slide Composable and handler
+  - var slidePosition by remember { mutableStateOf(20f) } 
+  - val onSlideChange = { position: Float -> slidePosition = position }
+- Stateful Switch Composable and handler
+  - val selectedState = remember { mutableStateOf(false) } 
+  - val onSwitchChange = { onOff: Boolean -> selectedState.value = onOff }
 - Spacer / Text / Divider / Columm Foundation or Layout or Material Design 사용
 - <img src = "https://github.com/jhanulis7/JetpackComposeSample/blob/main/DemoCompose.png" width="30%" height="30%">
 
 ## StateExample
 - stateful / stateless composable
 - state hoisting 
-- rememberSavalble
+  - Composable Tree 에서 하위로 데이타 단방향으로 상태 및 핸들러를 전달하고, 사용자 인터랙션이 일어나면 핸들러를 통해서 이벤트를 위로 전달함.
+  - 핸들러에는 상태값 갱신이 구현되도록 하여, 최상위에서만 상태값을 변하게끔 하도록 하고, 상태가 변하면 아래 Composable 에게 recompostion 되도록 함
+- rememberSavalble : onConfiguration 이 되더라도 상태값이 유지되도록 함
+  - var slidePosition by rememberSavable { mutableStateOf(20f) } 
 - <img src = "https://github.com/jhanulis7/JetpackComposeSample/blob/main/Hoisting.png" width="30%" height="30%">
 
 ## CompLocalDemo
-- compositionLocalOf
-- staticCompositionLocalOf
-- rememberSavalble
-- CompositionLocalProvider
+- compositionLocalOf : Composable child tree 에서 사용되어지는 Composable 에서만 사용 가능, 자주 변하는 상태값일때 사용
+- staticCompositionLocalOf : Composable child tree 에서 하위 child 에 상태 전달, 항상 전달되지 않도록 static 하게 선언해서 바로 사용하도록함
+- CompositionLocalProvider : LocalXXXX provides value 형태로 주입
+  - ex) val context:Context = LocalContext.current  <-- 이것도 이것을 통해서 구현되어 어떤 childe Composable 에서 사용 가능
 - <img src = "https://github.com/jhanulis7/JetpackComposeSample/blob/main/CompLocal.png" width="30%" height="30%">
+
+## SlotApiDemo
+- Composable 함수를 다른 함수에 넣어주는 방법
+- Composable 함수를 받은 Composable 은 런타임중에 동적으로 삽입이 되어, UI 를 구성할 수 있다
+- 즉, Slot Api 를 이용한 Composable 은 본질적으로 런타임중에 삽입할 수 있는 하나 이상의 다른 Composable 을 포함하는 사용자 인터페이스 템플릿이다.
+- <img src = "https://github.com/jhanulis7/JetpackComposeSample/blob/main/SlotApi.png" width="30%" height="30%">
 
