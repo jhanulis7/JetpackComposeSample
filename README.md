@@ -36,8 +36,7 @@
 - LinearProgressIndicator / CircularProgressIndicator / Image / CheckBoxes / painterResource
 - <p align="center"><img src = "https://github.com/jhanulis7/JetpackComposeSample/blob/main/SlotApi.png" width="30%" height="30%">
   <img src = "https://github.com/jhanulis7/JetpackComposeSample/blob/main/SlotApi2.png" width="30%" height="30%">
-  <img src = "https://github.com/jhanulis7/JetpackComposeSample/blob/main/SlotApi3.png" width="30%" height="30%">
-- </p>
+  <img src = "https://github.com/jhanulis7/JetpackComposeSample/blob/main/SlotApi3.png" width="30%" height="30%"></p>
 
 ## ModifierDemo
 - Modifier 는 테두리 배경 크기 핸들러 제스쳐등을 다른 컴포즈블에 전달한다.
@@ -48,7 +47,10 @@
 - Modifer 를 합칠경우, then 을 사용
   - val combined = first.then(second)  
 - RoundedCornerShape / clip
-- <p align="center"><img src = "https://github.com/jhanulis7/JetpackComposeSample/blob/main/Modifier.png" width="30%" height="30%">
-- </p>
+- <p align="center"><img src = "https://github.com/jhanulis7/JetpackComposeSample/blob/main/Modifier.png" width="30%" height="30%"></p>
 
+## LayoutDemo
+- Row, Column 사용법 / Box Layout 사용법
+- alignByBaseline / alignBy / clip / RoundCorner / CircleShape / CutCornerShape
+- <p align="center"><img src = "https://github.com/jhanulis7/JetpackComposeSample/blob/main/Layout.png" width="30%" height="30%"></p>
 
