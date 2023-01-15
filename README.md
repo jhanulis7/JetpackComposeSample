@@ -39,3 +39,16 @@
   <img src = "https://github.com/jhanulis7/JetpackComposeSample/blob/main/SlotApi3.png" width="30%" height="30%">
 - </p>
 
+## ModifierDemo
+- Modifier 는 테두리 배경 크기 핸들러 제스쳐등을 다른 컴포즈블에 전달한다.
+- 이때 Modifier 의 순서가 가장 중요하다.
+  - padding 이후에 border 를 할것인가, border 후에 padding 할것인가.
+- Modifier 는 Param 중 1st 선택적 Param 이어야 한다.
+  - fun CustomImage(imageId: Int, modifier: Modifier = Modifier)
+- Modifer 를 합칠경우, then 을 사용
+  - val combined = first.then(second)  
+- RoundedCornerShape / clip
+- <p align="center"><img src = "https://github.com/jhanulis7/JetpackComposeSample/blob/main/Modifier.png" width="30%" height="30%">
+- </p>
+
+
