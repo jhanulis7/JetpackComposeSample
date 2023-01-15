@@ -36,5 +36,6 @@
 - LinearProgressIndicator / CircularProgressIndicator / Image / CheckBoxes / painterResource
 - <p align="center"><img src = "https://github.com/jhanulis7/JetpackComposeSample/blob/main/SlotApi.png" width="30%" height="30%">
   <img src = "https://github.com/jhanulis7/JetpackComposeSample/blob/main/SlotApi2.png" width="30%" height="30%">
+  <img src = "https://github.com/jhanulis7/JetpackComposeSample/blob/main/SlotApi3.png" width="30%" height="30%">
 - </p>
 
