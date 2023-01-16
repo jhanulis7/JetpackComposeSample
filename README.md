@@ -59,4 +59,4 @@
 - fun Modifier.<커스텀 레이아웃이름>(선택적 param) { measurable, constaints -> }
   - measurable : 자식이 배치될 정보
   - constraints : 자식이 사용할 수 있는 최대/최소 widhth/height 
-
+- <p align="center"><img src = "https://github.com/jhanulis7/JetpackComposeSample/blob/main/CustomLayout.png" width="30%" height="30%"></p>
