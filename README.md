@@ -61,3 +61,15 @@
   - constraints : 자식이 사용할 수 있는 최대/최소 widhth/height 
 - fraction 값(0.f - 1f) 을 이용하여, guideLine 처럼 기준으로 UI 를 그릴 수 있다 
 - <p align="center"><img src = "https://github.com/jhanulis7/JetpackComposeSample/blob/main/CustomLayout.png" width="30%" height="30%"></p>
+- CustomLayout 을 구현하면, 여러 자식에게 하나의 커스텀 레이아웃을 제공 할 수 있다.
+- CustomLayout 은 Compose의 Layout Composable 을 이용하여 선언, 이 함수는 여러 자식을 측정하고 위치를 지정하는 목적으로만 사용
+
+## Coroutine & LauchEffect
+- Composable 안에서의 Coroutine Scope 사용은 rememberCoroutineScope() 이다
+- `val coroutineScope = rememeberCoroutineScope()`
+- 취소시 `coroutineScope.cancel()`
+- Composable 안에서 corotuineScope.lauch() {} 를 호출하면 LaunchedEffect 를 사용하라라고 에러가 표시된다.
+- 해당 composable 이 recompostion 되면서 코루틴이 계속 실행 될 가능성이 높기 때문에 이를 해결하기 위해서 LauchEffect 를 사용하라라고 권장한다. 즉, 부모의 라이프사이클을 인식하기 때문에 안전하게 사용할 수 있다
+- LaunchedEffect Composable 이 호출되면, 해당 코루틴은 즉시 실행이 되고 비동기로 수행한다. 부모 Composable 이 종료가 되면 해당 LauchEffect 인스턴스와 코루틴은 파기된다.
+- `LaunchedEffect(key1 ..)` 의 Key1 패러메터값은 recompostion 통해 코루틴 동작을 제어한다. 즉, key 값이 변경이 되지 않으면 해당 코루틴을 유지하고, 변경이 되면 현재 코루틴을 취소하고 새로운 코루틴을 실행한다. 
+- 
