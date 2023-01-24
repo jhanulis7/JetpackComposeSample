@@ -20,9 +20,14 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import com.example.viewmodeldemo.ui.theme.ViewModelDemoTheme
 
 class MainActivity : ComponentActivity() {
+    private val viewModel: TempViewModel = TempViewModel()
+    lateinit var tempViewModel: TempViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -32,7 +37,9 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    ScreenSetup()
+
+                    tempViewModel = ViewModelProvider(this).get(TempViewModel::class.java)
+                    ScreenSetup(tempViewModel)
                 }
             }
         }
@@ -46,7 +53,7 @@ fun ScreenSetup(
     //또는 자식 composable(subScreen) 에 viewModel 상태와 핸들러를 전달한다. 이번 예제는 이걸로 한다.
     viewModel: TempViewModel = TempViewModel()
 ) {
-    ////Log.d("ViewModel", "ScreenSetup() isFahrenheit: ${viewModel.isFahrenheit}")
+    Log.d("ViewModel", "ScreenSetup() isFahrenheit: ${viewModel.isFahrenheit}")
 
     MainScreen(
         isFahrenheit = viewModel.isFahrenheit,
@@ -68,14 +75,14 @@ fun MainScreen(
         modifier = Modifier.fillMaxSize()
     ) {
         var textState by remember { mutableStateOf("") }
-        //Log.d("ViewModel", "subScreen() Enter!! textState:$textState")
+        Log.d("ViewModel", "MainScreen() Enter!! textState:$textState")
 
         val onTextChange = { text: String ->
-            //Log.d("ViewModel", "subScreen() onTextChange: text:$text")
+            Log.d("ViewModel", "MainScreen() onTextChange: text:$text")
             textState = text
         }
 
-        //Log.d("ViewModel", "subScreen() isFahrenheit: $isFahrenheit")
+        Log.d("ViewModel", "MainScreen() isFahrenheit: $isFahrenheit")
 
         Text("Temperature Converter",
             modifier = Modifier.padding(20.dp),
@@ -89,13 +96,13 @@ fun MainScreen(
             onTextChange = onTextChange
         )
 
-        //Log.d("ViewModel", "subScreen() : result:$result")
+        Log.d("ViewModel", "MainScreen() : result:$result")
         Text(
             text = result,
             modifier = Modifier.padding(20.dp)
         )
 
-        //Log.d("ViewModel", "subScreen() : textState:$textState")
+        Log.d("ViewModel", "MainScreen() : textState:$textState")
         Button(onClick = { convertTemp(textState) }) {
             Text(
                 text = "Convert Temperature",

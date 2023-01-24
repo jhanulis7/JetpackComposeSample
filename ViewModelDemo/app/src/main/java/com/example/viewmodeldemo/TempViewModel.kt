@@ -7,7 +7,7 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import kotlin.math.roundToInt
 
-class TempViewModel {
+class TempViewModel : ViewModel() {
     // Composable func 에서는 아래와 같이
     // - var sliderPosition by remember { mutableStateOf(20f) }
     // - val checked = remember { mutableStateOf(defaultChecked) }
@@ -29,7 +29,7 @@ class TempViewModel {
     }
 
     fun switchChange() {
-        //Log.d("ViewModel", "switchChange() isFahrenheit:$isFahrenheit to ${!isFahrenheit}")
+        Log.d("ViewModel", "switchChange() isFahrenheit:$isFahrenheit to ${!isFahrenheit}")
         isFahrenheit = !isFahrenheit
     }
 }
