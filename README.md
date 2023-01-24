@@ -73,3 +73,9 @@
 - LaunchedEffect Composable 이 호출되면, 해당 코루틴은 즉시 실행이 되고 비동기로 수행한다. 부모 Composable 이 종료가 되면 해당 LauchEffect 인스턴스와 코루틴은 파기된다.
 - `LaunchedEffect(key1 ..)` 의 Key1 패러메터값은 recompostion 통해 코루틴 동작을 제어한다. 즉, key 값이 변경이 되지 않으면 해당 코루틴을 유지하고, 변경이 되면 현재 코루틴을 취소하고 새로운 코루틴을 실행한다. 
 - 
+
+## ViewModel
+- viewModel 을 singleTone 하지 않고 사용하면 매번 새로운 뷰모델 생성 하게 되어 사용하던 State 가 항상 초기값을 가질 수 있다
+- 이런 경우, hilt 싱글톤 injection 하던가, MainActivity 에서 viewModel 받도록 한다.
+- 또는 자식 composable(subScreen) 에 viewModel 상태와 핸들러를 전달한다. 이번 예제는 이걸로 한다.
+- <p align="center"><img src = "https://github.com/jhanulis7/JetpackComposeSample/blob/main/viewModelDemo.png" width="30%" height="30%"></p>
