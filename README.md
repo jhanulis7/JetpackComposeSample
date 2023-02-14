@@ -79,3 +79,10 @@
 - 이런 경우, hilt 싱글톤 injection 하던가, MainActivity 에서 viewModel 받도록 한다.
 - 또는 자식 composable(subScreen) 에 viewModel 상태와 핸들러를 전달한다. 이번 예제는 이걸로 한다.
 - <p align="center"><img src = "https://github.com/jhanulis7/JetpackComposeSample/blob/main/viewModelDemo.png" width="30%" height="30%"></p>
+
+
+## NavigationSample
+- compose navigation sample
+- home screen 에서 이름을 입력받고, Welcome 에서 이름 받아서 보여주고, Profile 스크린으로 넘어가는데, 백키시 홈으로 넘어가도록 설정함
+- Outline text 예제로 hoisting 도 함께 구현
+- <p align="center"><img src = "https://github.com/jhanulis7/JetpackComposeSample/blob/main/comose.png" width="30%" height="30%"></p>
