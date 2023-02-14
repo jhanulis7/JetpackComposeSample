@@ -85,4 +85,6 @@
 - compose navigation sample
 - home screen 에서 이름을 입력받고, Welcome 에서 이름 받아서 보여주고, Profile 스크린으로 넘어가는데, 백키시 홈으로 넘어가도록 설정함
 - Outline text 예제로 hoisting 도 함께 구현
-- <p align="center"><img src = "https://github.com/jhanulis7/JetpackComposeSample/blob/main/comose.png" width="30%" height="30%"></p>
+- <p align="center"><img src = "https://github.com/jhanulis7/JetpackComposeSample/blob/main/NavigationSample/compose-navi-1.png" width="30%" height="30%">
+  <img src = "https://github.com/jhanulis7/JetpackComposeSample/blob/main/NavigationSample/compose-navi-2" width="30%" height="30%">
+  <img src = "https://github.com/jhanulis7/JetpackComposeSample/blob/main/NavigationSample/compose-navi-3" width="30%" height="30%"></p>
