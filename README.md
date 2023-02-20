@@ -88,3 +88,8 @@
 - <p align="center"><img src = "https://github.com/jhanulis7/JetpackComposeSample/blob/main/NavigationSample/compose-navi-1.png" width="30%" height="30%">
   <img src = "https://github.com/jhanulis7/JetpackComposeSample/blob/main/NavigationSample/compose-navi-2" width="30%" height="30%">
   <img src = "https://github.com/jhanulis7/JetpackComposeSample/blob/main/NavigationSample/compose-navi-3" width="30%" height="30%"></p>
+  
+## RoomSample
+- viewModel + LiveData + Room Architecture 를 이용함
+- Product 이름 , 수량을 room database 에 저장하고 읽고 업데이트 하는 샘플 앱
+- <p align="center"><img src = "https://github.com/jhanulis7/JetpackComposeSample/blob/main/roomSample.png" width="30%" height="30%"></p>
